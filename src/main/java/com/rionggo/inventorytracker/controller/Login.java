@@ -24,17 +24,14 @@ public class Login {
     InputValidator validator = new InputValidator();
 
     @FXML
-    private void loginToApp() throws IOException {
-        if (validator.validateLogin(username.getText(), password.getText())) {
-            System.out.println("login berhasil");
+    private void btnMasuk() throws IOException {
+        if (validator.validateLogin(username, password)) {
             App.setRoot("dashboard");
-        } else {
-            System.out.println("login gagal");
         }
     }
 
     @FXML
-    private void exitApp() {
+    private void btnKeluar() {
         System.exit(0);
     }
 }

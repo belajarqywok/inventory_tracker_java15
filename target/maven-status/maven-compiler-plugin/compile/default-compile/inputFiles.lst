@@ -1,6 +1,7 @@
-/home/bodhisattva/Documents/Code/JavaFX/InventoryTracker/src/main/java/com/rionggo/inventorytracker/models/KategoriBesi.java
-/home/bodhisattva/Documents/Code/JavaFX/InventoryTracker/src/main/java/com/rionggo/inventorytracker/App.java
-/home/bodhisattva/Documents/Code/JavaFX/InventoryTracker/src/main/java/module-info.java
-/home/bodhisattva/Documents/Code/JavaFX/InventoryTracker/src/main/java/com/rionggo/inventorytracker/controller/Dashboard.java
-/home/bodhisattva/Documents/Code/JavaFX/InventoryTracker/src/main/java/com/rionggo/inventorytracker/controller/Login.java
-/home/bodhisattva/Documents/Code/JavaFX/InventoryTracker/src/main/java/com/rionggo/inventorytracker/utils/InputValidator.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\connection\MySQLConnection.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\controller\Login.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\controller\Dashboard.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\models\KategoriBesi.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\module-info.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\App.java
+C:\Users\Operation\Documents\NetBeansProjects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\utils\InputValidator.java

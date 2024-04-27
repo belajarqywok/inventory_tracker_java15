@@ -5,69 +5,124 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-radius: 100; -fx-border-radius: 100;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rionggo.inventorytracker.controller.Login">
-   <left>
-      <Pane prefHeight="596.0" prefWidth="356.0" style="-fx-background-color: #2A2438;" BorderPane.alignment="CENTER" />
-   </left>
-   <right>
-      <Pane prefHeight="596.0" prefWidth="934.0" style="-fx-background-color: #5C5470;" BorderPane.alignment="CENTER">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rionggo.inventorytracker.controller.Login">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="75.0" prefWidth="1280.0" style="-fx-background-color: #2A2438;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="loginButton" layoutX="286.0" layoutY="460.0" mnemonicParsing="false" onAction="#loginToApp" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 10;" text="Masuk">
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="47.0" fitWidth="52.0" layoutX="75.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/engineer.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label prefHeight="35.0" prefWidth="338.0" text="PT. LESTARI ERA GEMILANG" textFill="#dbd8e3">
                <font>
-                  <Font name="Intel One Mono Bold" size="24.0" />
-               </font>
-               <effect>
-                  <Glow />
-               </effect>
-            </Button>
-            <TextField fx:id="username" layoutX="567.0" layoutY="245.0" prefHeight="40.0" prefWidth="210.0" promptText="Username" style="-fx-background-radius: 100;">
-               <font>
-                  <Font name="Intel One Mono" size="13.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
-            </TextField>
-            <Label layoutX="200.0" layoutY="239.0" prefHeight="46.0" prefWidth="239.0" text="USERNAME" textFill="#dbd8e3">
-               <font>
-                  <Font name="Intel One Mono" size="36.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="201.0" layoutY="324.0" prefHeight="46.0" prefWidth="239.0" text="PASSWORD" textFill="#dbd8e3">
-               <font>
-                  <Font name="Intel One Mono" size="36.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="password" layoutX="567.0" layoutY="329.0" prefHeight="40.0" prefWidth="210.0" promptText="Password" style="-fx-background-radius: 100;">
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
-               <font>
-                  <Font name="Intel One Mono Medium" size="13.0" />
-               </font>
-            </PasswordField>
-            <Label alignment="CENTER" layoutX="383.0" layoutY="75.0" prefHeight="50.0" prefWidth="190.0" style="-fx-background-color: #2A2438; -fx-background-radius: 10;" text="LOGIN ADMIN" textAlignment="CENTER" textFill="#dbd8e3" underline="true">
-               <font>
-                  <Font name="Intel One Mono" size="24.0" />
-               </font>
-            </Label>
-            <Button fx:id="exitButton" layoutX="498.0" layoutY="460.0" mnemonicParsing="false" onAction="#exitApp" opacity="0.61" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 10; -fx-background-color: red;" text="KELUAR" textFill="WHITE">
-               <font>
-                  <Font name="Intel One Mono Bold" size="24.0" />
-               </font>
-               <effect>
-                  <Glow />
-               </effect>
-            </Button>
+            <Pane prefHeight="75.0" prefWidth="648.0" />
          </children>
-      </Pane>
-   </right>
-</BorderPane>
+      </HBox>
+      <BorderPane layoutX="16.0" layoutY="76.0" prefHeight="384.0" prefWidth="724.0" style="-fx-background-color: #DBD8E3;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="76.0">
+         <top>
+            <Label alignment="CENTER" prefHeight="85.0" prefWidth="757.0" text="Manajemen Persediaan dan Penjualan Besi" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+            </Label>
+         </top>
+         <left>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </left>
+         <right>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="469.0" prefWidth="389.0" style="-fx-background-color: #5C5470; -fx-background-radius: 20;">
+                     <children>
+                        <Label text="LOGIN ADMIN" textFill="#dbd8e3">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </Label>
+                        <AnchorPane prefHeight="215.0" prefWidth="389.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="67.0" prefWidth="349.0" spacing="20.0" AnchorPane.bottomAnchor="113.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                                 <children>
+                                    <Label alignment="BASELINE_LEFT" prefHeight="27.0" prefWidth="111.0" text="Username" textFill="#dbd8e3">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <TextField fx:id="username" prefHeight="25.0" prefWidth="153.0" style="-fx-background-radius: 10;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="30.0" right="30.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="87.0" prefHeight="67.0" prefWidth="349.0" spacing="20.0">
+                                 <children>
+                                    <Label alignment="BASELINE_LEFT" prefHeight="27.0" prefWidth="172.0" text="Password" textFill="#dbd8e3">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="10.0" right="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <PasswordField fx:id="password" prefHeight="25.0" prefWidth="217.0" style="-fx-background-radius: 10;" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="30.0" right="30.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
+                        <HBox alignment="CENTER" prefHeight="78.0" prefWidth="389.0" spacing="80.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#btnMasuk" prefHeight="35.0" prefWidth="80.0" style="-fx-background-radius: 10; -fx-background-color: #2A2438;" text="Masuk" textFill="#dbd8e3">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#btnKeluar" prefHeight="35.0" prefWidth="80.0" style="-fx-background-radius: 10; -fx-background-color: #DBD8E3;" text="Keluar">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+         <bottom>
+            <Pane prefHeight="32.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
