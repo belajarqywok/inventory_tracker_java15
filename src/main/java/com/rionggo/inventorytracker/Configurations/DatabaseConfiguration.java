@@ -1,4 +1,4 @@
-package com.rionggo.inventorytracker.connection;
+package com.rionggo.inventorytracker.Configurations;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class MySQLConnection {
+public class DatabaseConfiguration {
 
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/inventory";
@@ -17,7 +17,7 @@ public class MySQLConnection {
 
     private Connection connection;
 
-    public MySQLConnection() {
+    public DatabaseConfiguration() {
         try {
             Class.forName(JDBC_DRIVER);
             connection = DriverManager.getConnection(DB_URL, USER, PASS);

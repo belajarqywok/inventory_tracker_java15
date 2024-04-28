@@ -1,4 +1,4 @@
-package com.rionggo.inventorytracker.controller;
+package com.rionggo.inventorytracker.Handlers;
 
 import java.io.IOException;
 
@@ -8,9 +8,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import com.rionggo.inventorytracker.App;
-import com.rionggo.inventorytracker.utils.InputValidator;
+import com.rionggo.inventorytracker.Repositories.AuthRepositories;
 
-public class Login {
+public class LoginHandlers extends AuthRepositories {
 
     @FXML
     TextField username;
@@ -21,13 +21,12 @@ public class Login {
     @FXML
     Button loginButton;
 
-    InputValidator validator = new InputValidator();
-
     @FXML
     private void btnMasuk() throws IOException {
-        if (validator.validateLogin(username, password)) {
-            App.setRoot("dashboard");
-        }
+        boolean validation = loginRepo(
+            username.getText(), password.getText());
+
+        if (validation) App.setRoot("dashboard");
     }
 
     @FXML

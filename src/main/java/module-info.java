@@ -4,8 +4,8 @@ module com.rionggo.inventorytracker.controller {
     requires java.sql;
     requires transitive javafx.graphics;
 
-    opens com.rionggo.inventorytracker.controller to javafx.fxml;
-    opens com.rionggo.inventorytracker.models to javafx.base;
+    opens com.rionggo.inventorytracker.Entities to javafx.base;
+    opens com.rionggo.inventorytracker.Handlers to javafx.fxml;
 
     exports com.rionggo.inventorytracker;
 }

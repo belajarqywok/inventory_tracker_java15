@@ -1,11 +1,11 @@
-package com.rionggo.inventorytracker.controller;
+package com.rionggo.inventorytracker.Handlers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public class Dashboard {
+public class DashboardHandlers {
     
     @FXML
     private Button btnKategoriBesi;
