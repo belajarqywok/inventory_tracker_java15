@@ -31,11 +31,11 @@ INSERT INTO suppliers (
   supplier_address,
   supplier_email
 ) VALUES
-("SP-1", "dosty", "+62918391219231", "blabalbalablablablab", "1@admin.com"),
-("SP-2", "andre", "+62918391219232", "blabalbalablablablab", "2@admin.com"),
-("SP-3", "erik", "+62918391219233", "blabalbalablablablab", "3@admin.com"),
-("SP-4", "babas", "+62918391219234", "blabalbalablablablab", "4@admin.com"),
-("SP-5", "panie", "+62918391219235", "blabalbalablablablab", "5@admin.com");
+("SP-1", "feri", "+62918391219231", "blabalbalablablablab", "1@admin.com"),
+("SP-2", "rio", "+62918391219232", "blabalbalablablablab", "2@admin.com"),
+("SP-3", "nanda", "+62918391219233", "blabalbalablablablab", "3@admin.com"),
+("SP-4", "gondes", "+62918391219234", "blabalbalablablablab", "4@admin.com"),
+("SP-5", "arya", "+62918391219235", "blabalbalablablablab", "5@admin.com");
 
 -- Insert Customer Datas
 INSERT INTO customers (

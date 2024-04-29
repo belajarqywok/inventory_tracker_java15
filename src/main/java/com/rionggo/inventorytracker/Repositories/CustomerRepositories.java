@@ -8,25 +8,25 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 
-import com.rionggo.inventorytracker.Entities.SupplierEntity;
+import com.rionggo.inventorytracker.Entities.CustomerEntity;
 import com.rionggo.inventorytracker.Configurations.DatabaseConfiguration;
 
 
 /**
- *  SupplierRepositories
+ *  Customer Repositories
  */
-public class SupplierRepositories extends DatabaseConfiguration {
+public class CustomerRepositories extends DatabaseConfiguration {
 
   // Table Name
-  private final String TABLENAME = "suppliers";
+  private final String TABLENAME = "customers";
 
   /**
-   * Get Suppliers Repository
+   * Get Customers Repository
    * 
    * @return List<Object[]>
    */
-  protected List<Object[]> getSuppliersRepository () {
-    List<Object[]> suppliersDataList = new ArrayList<>();
+  protected List<Object[]> getCustomersRepository () {
+    List<Object[]> customersDataList = new ArrayList<>();
     Connection connection = getConnection();
     String queryString = String.format(
       "SELECT * FROM %s", this.TABLENAME
@@ -39,51 +39,55 @@ public class SupplierRepositories extends DatabaseConfiguration {
       ResultSet resultSet = statement.executeQuery();
 
       while (resultSet.next()) {
-        String supplierId = resultSet
-          .getString("supplier_id");
-        String supplierName = resultSet
-          .getString("supplier_name");
-        String supplierContact = resultSet
-          .getString("supplier_contact");
-        String supplierAddress = resultSet
-          .getString("supplier_address");
-        String supplierEmail = resultSet
-          .getString("supplier_email");
+        String customerId = resultSet
+          .getString("customer_id");
+        String customerName = resultSet
+          .getString("customer_name");
+        String customerContact = resultSet
+          .getString("customer_contact");
+        String customerAddress = resultSet
+          .getString("customer_address");
+        String customerEmail = resultSet
+          .getString("customer_email");
 
         Object[] rowData = {
-          supplierId, supplierName,
-          supplierContact, supplierAddress,
-          supplierEmail
+          customerId, customerName,
+          customerContact, customerAddress,
+          customerEmail
         };
 
-        suppliersDataList.add(rowData);
+        customersDataList.add(rowData);
       }
 
-      return (List<Object[]>) suppliersDataList;
+      return (List<Object[]>) customersDataList;
 
     } catch (SQLException exception) {
       exception.printStackTrace();
-      return suppliersDataList;
+      return customersDataList;
+
+    } finally {
+      try { if (connection != null) connection.close(); }
+      catch (SQLException exception) { exception.printStackTrace(); }
     }
   }
 
 
 
   /**
-   * Create Supplier Repository
+   * Create Customer Repository
    * 
-   * @param entity SupplierEntity
+   * @param entity CustomerEntity
    * @return boolean
    */
-  protected boolean createSupplierRepository (SupplierEntity entity) {
+  protected boolean createCustomerRepository (CustomerEntity entity) {
     Connection connection = getConnection();
     String queryString = String.format(
       "INSERT INTO %s ( " +
-        "supplier_id,      "     +
-        "supplier_name,    "     +
-        "supplier_contact, "     +
-        "supplier_address, "     +
-        "supplier_email    "     +
+        "customer_id,      "     +
+        "customer_name,    "     +
+        "customer_contact, "     +
+        "customer_address, "     +
+        "customer_email    "     +
       ")"                        +
       "VALUES (?, ?, ?, ?, ?)", this.TABLENAME
     );
@@ -96,15 +100,15 @@ public class SupplierRepositories extends DatabaseConfiguration {
         .prepareStatement(queryString);
 
       Object[] entities = {
-        entity.getSupplierId(),
-        entity.getSupplierName(),
-        entity.getSupplierContact(),
-        entity.getSupplierAddress(),
-        entity.getSupplierEmail(),
+        entity.getCustomerId(),
+        entity.getCustomerName(),
+        entity.getCustomerContact(),
+        entity.getCustomerAddress(),
+        entity.getCustomerEmail(),
       };
       
-      for (int index = 0; index < entities.length; index ++) 
-        statement.setString(index + 1, (String) entities[index]);
+      for (int index = 1; index < (entities.length + 1); index ++) 
+        statement.setString(index, (String) entities[index]);
 
       if (statement.executeUpdate() > 0) {
         connection.commit();
@@ -128,6 +132,7 @@ public class SupplierRepositories extends DatabaseConfiguration {
     } finally {
       try { 
         connection.setAutoCommit(true);
+        if (connection != null) connection.close();
       }
       catch (SQLException exception) { exception.printStackTrace(); }
     }
@@ -136,20 +141,20 @@ public class SupplierRepositories extends DatabaseConfiguration {
 
   
   /**
-   * Update Supplier Repository
+   * Update Customer Repository
    * 
-   * @param entity SupplierEntity
+   * @param entity CustomerEntity
    * @return boolean
    */
-  protected boolean updateSupplierRepository (SupplierEntity entity) {
+  protected boolean updateCustomerRepository (CustomerEntity entity) {
     Connection connection = getConnection();
     String queryString = String.format(
       "UPDATE %s SET "       +
-        "supplier_name      = ?, "  +
-        "supplier_contact   = ?, "  +
-        "supplier_address   = ?, "  +
-        "supplier_email     = ?  "  +
-      "WHERE supplier_id    = ?  ", this.TABLENAME
+        "customer_name      = ?, "  +
+        "customer_contact   = ?, "  +
+        "customer_address   = ?, "  +
+        "customer_email     = ?  "  +
+      "WHERE customer_id    = ?  ", this.TABLENAME
     );
         
     try {
@@ -160,15 +165,15 @@ public class SupplierRepositories extends DatabaseConfiguration {
         .prepareStatement(queryString);
 
       Object[] entities = {
-        entity.getSupplierName(),
-        entity.getSupplierContact(),
-        entity.getSupplierAddress(),
-        entity.getSupplierEmail(),
-        entity.getSupplierId(),
+        entity.getCustomerId(),
+        entity.getCustomerName(),
+        entity.getCustomerContact(),
+        entity.getCustomerAddress(),
+        entity.getCustomerEmail(),
       };
       
-      for (int index = 0; index < entities.length; index ++) 
-        statement.setString(index + 1, (String) entities[index]);
+      for (int index = 1; index < (entities.length + 1); index ++) 
+        statement.setString(index, (String) entities[index]);
 
       if (statement.executeUpdate() > 0) {
         connection.commit();
@@ -192,6 +197,7 @@ public class SupplierRepositories extends DatabaseConfiguration {
     } finally {
       try { 
         connection.setAutoCommit(true);
+        if (connection != null) connection.close();
       }
       catch (SQLException exception) { exception.printStackTrace(); }
     }
@@ -200,15 +206,15 @@ public class SupplierRepositories extends DatabaseConfiguration {
 
 
   /**
-   * Delete Supplier Repository
+   * Delete Customer Repository
    * 
-   * @param supplierId String
+   * @param customerId String
    * @return boolean
    */
-  protected boolean deleteSupplierRepository (String supplierId) {
+  protected boolean deleteCustomerRepository (String customerId) {
     Connection connection = getConnection();
     String queryString = String.format(
-      "DELETE FROM %s WHERE supplier_id = ?", this.TABLENAME
+      "DELETE FROM %s WHERE customer_id = ?", this.TABLENAME
     );
         
     try {
@@ -218,7 +224,7 @@ public class SupplierRepositories extends DatabaseConfiguration {
       PreparedStatement statement = connection
         .prepareStatement(queryString);
 
-      statement.setString(1, supplierId);
+      statement.setString(1, customerId);
 
       if (statement.executeUpdate() > 0) {
         connection.commit();
@@ -242,6 +248,7 @@ public class SupplierRepositories extends DatabaseConfiguration {
     } finally {
       try { 
         connection.setAutoCommit(true);
+        if (connection != null) connection.close();
       }
       catch (SQLException exception) { exception.printStackTrace(); }
     }
@@ -250,22 +257,21 @@ public class SupplierRepositories extends DatabaseConfiguration {
 
 
   /**
-   * Search Suppliers Repository
+   * Search Customer Repository
    * 
    * @return List<Object[]>
    */
-  protected List<Object[]> searchSuppliersRepository (String key) {
-    List<Object[]> suppliersDataList = new ArrayList<>();
+  protected List<Object[]> searchCustomersRepository () {
+    List<Object[]> customersDataList = new ArrayList<>();
     Connection connection = getConnection();
     String queryString = String.format(
       "SELECT * FROM %s WHERE (  " + 
-        "supplier_id      LIKE '%%%s%%' OR " +
-        "supplier_name    LIKE '%%%s%%' OR " +
-        "supplier_contact LIKE '%%%s%%' OR " +
-        "supplier_address LIKE '%%%s%%' OR " +
-        "supplier_email   LIKE '%%%s%%'    " +
-      ")", this.TABLENAME,
-      key, key, key, key, key
+        "customer_id      LIKE '%?%' OR " +
+        "customer_name    LIKE '%?%' OR " +
+        "customer_contact LIKE '%?%' OR " +
+        "customer_address LIKE '%?%' OR " +
+        "customer_email   LIKE '%?%'    " +
+      ")", this.TABLENAME
     );
 
     try {
@@ -275,31 +281,35 @@ public class SupplierRepositories extends DatabaseConfiguration {
       ResultSet resultSet = statement.executeQuery();
 
       while (resultSet.next()) {
-        String supplierId = resultSet
-          .getString("supplier_id");
-        String supplierName = resultSet
-          .getString("supplier_name");
-        String supplierContact = resultSet
-          .getString("supplier_contact");
-        String supplierAddress = resultSet
-          .getString("supplier_address");
-        String supplierEmail = resultSet
-          .getString("supplier_email");
+        String customerId = resultSet
+          .getString("customer_id");
+        String customerName = resultSet
+          .getString("customer_name");
+        String customerContact = resultSet
+          .getString("customer_contact");
+        String customerAddress = resultSet
+          .getString("customer_address");
+        String customerEmail = resultSet
+          .getString("customer_email");
 
         Object[] rowData = {
-          supplierId, supplierName,
-          supplierContact, supplierAddress,
-          supplierEmail
+          customerId, customerName,
+          customerContact, customerAddress,
+          customerEmail
         };
 
-        suppliersDataList.add(rowData);
+        customersDataList.add(rowData);
       }
 
-      return (List<Object[]>) suppliersDataList;
+      return (List<Object[]>) customersDataList;
 
     } catch (SQLException exception) {
       exception.printStackTrace();
-      return suppliersDataList;
+      return customersDataList;
+
+    } finally {
+      try { if (connection != null) connection.close(); }
+      catch (SQLException exception) { exception.printStackTrace(); }
     }
   }
 

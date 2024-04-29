@@ -79,9 +79,9 @@ CREATE TABLE suppliers (
   supplier_id       VARCHAR(16) NOT NULL PRIMARY KEY,
 
   supplier_name     VARCHAR(32) NOT NULL,
-  supplier_contact  VARCHAR(16) UNIQUE NOT NULL,
+  supplier_contact  VARCHAR(32) UNIQUE NOT NULL,
   supplier_address  TEXT NOT NULL,
-  supplier_email    VARCHAR(16) UNIQUE NOT NULL
+  supplier_email    VARCHAR(32) UNIQUE NOT NULL
 );
 
 CREATE INDEX idx_supplier_name

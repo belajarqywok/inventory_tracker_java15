@@ -11,7 +11,7 @@ import javafx.scene.control.Alert.AlertType;
 public class DatabaseConfiguration {
 
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/inventory";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/iron_sales_db";
     private static final String USER = "root";
     private static final String PASS = "";
 

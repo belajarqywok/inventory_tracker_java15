@@ -22,7 +22,7 @@ public class AuthRepositories extends DatabaseConfiguration {
     Connection connection = getConnection();
     String query = (
       "SELECT * FROM login WHERE username = ?" +
-      "AND password = SHA2(\"?\", 256)"
+      "AND password = SHA2(?, 256)"
     );
         
     try {

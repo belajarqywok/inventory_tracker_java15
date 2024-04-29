@@ -1,7 +1,12 @@
-F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\controller\Login.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Handlers\DashboardHandlers.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Repositories\CustomerRepositories.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Repositories\SupplierRepositoriesTest.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Repositories\AuthRepositories.java
 F:\projects\application projects\InventoryTracker\src\main\java\module-info.java
-F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\connection\MySQLConnection.java
-F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\controller\Dashboard.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Entities\CustomerEntity.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Handlers\LoginHandlers.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Utilities\InputValidator.java
 F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\App.java
-F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\models\KategoriBesi.java
-F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\utils\InputValidator.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Configurations\DatabaseConfiguration.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Repositories\SupplierRepositories.java
+F:\projects\application projects\InventoryTracker\src\main\java\com\rionggo\inventorytracker\Entities\SupplierEntity.java
